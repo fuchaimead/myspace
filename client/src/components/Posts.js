@@ -40,7 +40,7 @@ class Post extends Component {
           </Table.Row>
         </Table.Header>
           {this.displayPost()}
-        </Table> 
+        </Table>   
         <Link to={`/posts/postform`}> 
         <Button > Add Post </Button> 
         </Link> 

@@ -17,15 +17,16 @@ class SinglePost extends Component {
     });
   }
 
-  deletePost = (id) => {
+  deletePost = () => {
     window.confirm("Delete Post?")
-    axios.delete(`/api/posts/${id}`)
-    .then( () => {
-      const { posts } = this.state;
-      this.setState({ posts: posts.filter( p => p.id !== id ) })
-    })
+    axios.delete(`/api/posts/${this.state.post.id}`)
+      .then( res => {
+        this.props.history.push('/Posts')
+      })
+      .catch( err => {
+        console.log(err)
+      });
   }
-
 
   render(){
     // const { post } = this.state.post

@@ -8,7 +8,6 @@ class PostForm extends Component {
 
   componentDidMount() {
     const match = this.props.match;
-
     if(match)
       axios.get(`/api/posts/${match.params.id}`)
         .then( res => {
@@ -52,22 +51,20 @@ class PostForm extends Component {
 
   handleChange = (e) => {
     const { id, value } = e.target;
-
     this.setState({ post: {...this.state.post, [id]: value } })
   }
 
 
 
-  saveButton = () => {
-    debugger
-      return(
-        <div> 
-      {/* <Button primary type='submit'> Save </Button>  */}
-      <Redirect to={'/posts'}/> 
-      </div> 
-    )
-  }
-
+  // saveButton = () => {
+  //   debugger
+  //     return(
+  //       <div> 
+  //     {/* <Button primary type='submit'> Save </Button>  */}
+  //     <Redirect to={'/posts'}/> 
+  //     </div> 
+  //   )
+  // }
 
   render() {
     const { name, body } = this.state.post;
